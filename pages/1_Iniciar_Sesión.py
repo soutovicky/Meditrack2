@@ -1,5 +1,6 @@
 import streamlit as st
 import psycopg2
+import time
 
 # Configuración de la conexión a la base de datos
 def get_db_connection():
@@ -20,6 +21,14 @@ def get_db_connection():
     except Exception as e:
         st.error(f"Error al conectar a la base de datos: {e}")
         return None
+
+# Función para mostrar la barra de carga
+def show_loading_bar():
+    with st.spinner('Tus datos se están registrando...'):
+        progress_bar = st.progress(0)
+        for percent_complete in range(100):
+            time.sleep(0.05)
+            progress_bar.progress(percent_complete + 1)
 
 # Función para verificar si el ID existe en la tabla 'empleado'
 def check_id_in_empleado(id_to_check):
@@ -102,6 +111,7 @@ if 'user_role' not in st.session_state:
     st.session_state['user_role'] = None
 
 if st.button("Iniciar Sesion"):
+    show_loading_bar()
     if not id_input or not nombre_input or not apellido_input:
         st.error("Por favor, complete todos los campos.")
     else:
