@@ -68,12 +68,13 @@ def get_empleados_por_sector():
         return None
 
 # Función para mostrar el logo de la página
-
 def show_logo():
-    logo_path = os.path.join(os.path.dirname('C:/Users/vicky.DESKTOP-TV6SV47/Documents/GitHub/Meditrack2/Imagenes/Logo.png'), 'Imagenes', 'Logo.png')
+    #logo_path = os.path.join(os.path.dirname('C:/Users/vicky.DESKTOP-TV6SV47/Documents/GitHub/Meditrack2/Imagenes/Logo.png'), 'Imagenes', 'Logo.png')
     #logo = Image.open('C:/Users/vicky.DESKTOP-TV6SV47/Documents/GitHub/Meditrack2/Imagenes/Logo.png')  # Reemplaza con la ruta a tu imagen de logo
-    logo = Image.open(logo_path)
-    st.image(logo, width=500)
+    #logo = Image.open(logo_path)
+    #st.image(logo, width=500)
+    logo_url = "https://github.com/soutovicky/Meditrack2/blob/main/Imagenes/Logo.png"
+    st.image(logo_url, caption="Logo de Meditrack", use_column_width=True)
 
 # Función para mostrar el menú principal
 def show_main_menu():
