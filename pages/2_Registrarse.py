@@ -31,7 +31,6 @@ def show_loading_bar():
         for percent_complete in range(100):
             time.sleep(0.05)
             progress_bar.progress(percent_complete + 1)
-        st.success('¡Carga completa! Ya casi estamos listos.')
 
 # Función para registrar un nuevo empleado
 def registrar_empleado(id_empleado, nombre, apellido, sector_geriatrico, horario_entrada, horario_salida):
