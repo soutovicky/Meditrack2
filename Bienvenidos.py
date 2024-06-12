@@ -158,7 +158,7 @@ def planning_page():
 
 # Página de bienvenida
 def welcome_page():
-    #show_logo()
+    show_logo()
     st.write("""
 
 Meditrack es una aplicación diseñada para facilitar la gestión de información médica en entornos hospitalarios. Con Meditrack, los profesionales de la salud pueden gestionar pacientes, prescripciones médicas y horarios de administración de medicamentos de manera eficiente y segura.
