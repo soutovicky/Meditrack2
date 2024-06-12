@@ -59,13 +59,17 @@ def main():
     # Columna 1: Sección para usuarios existentes
     with col1:
         st.header("¿Ya tenés una cuenta?")
-        st.page_link("pages/1_Iniciar_Sesión.py", label="Inicio", icon="➡", help=None, disabled=False, use_container_width=None)
+        if st.button("Iniciar Sesión"):
+            st.switch_page("pages/1_Iniciar_Sesión.py")
+            #st.page_link("pages/1_Iniciar_Sesión.py", label="Inicio", icon="➡", help=None, disabled=False, use_container_width=None)
             
 
     # Columna 2: Sección para nuevos usuarios
     with col2:
         st.header("¿Sos nuevo en la aplicación?")
-        st.page_link("pages/2_Registrarse.py", label="Registrarse", icon="➡", help=None, disabled=False, use_container_width=None)
+        if st.button("Registrarse"):
+            st.switch_page("pages/2_Registrarse.py")
+            #st.page_link("pages/2_Registrarse.py", label="Registrarse", icon="➡", help=None, disabled=False, use_container_width=None)
             
 
 # Función para obtener los empleados por sector geriátrico
