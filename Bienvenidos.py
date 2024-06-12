@@ -74,7 +74,7 @@ def get_empleados_por_sector():
 # Función para mostrar el logo de la página
 
 def show_logo():
-    logo = Image.open('C:/Users/vicky.DESKTOP-TV6SV47/Downloads/pixelcut-export.png')  # Reemplaza con la ruta a tu imagen de logo
+    logo = Image.open('C:\Users\vicky.DESKTOP-TV6SV47\Documents\GitHub\Meditrack2\Imagenes\Logo.png')  # Reemplaza con la ruta a tu imagen de logo
     st.image(logo, width=500)
 
 # Función para mostrar el menú principal

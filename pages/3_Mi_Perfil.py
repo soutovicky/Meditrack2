@@ -487,6 +487,20 @@ def prescripcion_page():
 
 
 #####funciones a probar
+# Función para obtener la conexión a la base de datos
+def get_db_connection():
+    try:
+        conn = psycopg2.connect(
+            host="your_host",
+            database="your_database",
+            user="your_user",
+            password="your_password"
+        )
+        return conn
+    except Exception as e:
+        st.error(f"Error al conectar con la base de datos: {e}")
+        return None
+
 # Función para obtener los medicamentos y horarios de administración
 def get_medicamentos_horarios():
     try:
@@ -498,7 +512,7 @@ def get_medicamentos_horarios():
             SELECT p.ID_Pacientes, p.nombre_medicamento, p.horario_administracion
             FROM meditrack.prescripcion p
             LEFT JOIN meditrack.administra a ON p.ID_Prescripcion = a.ID_Prescripcion
-            WHERE a.administrado = FALSE
+            WHERE a.administrado = FALSE OR a.administrado IS NULL
         """
         cur.execute(query)
         result = cur.fetchall()
@@ -509,6 +523,7 @@ def get_medicamentos_horarios():
         st.error(f"Error al obtener los horarios de medicamentos: {e}")
         return None
 
+# Función para obtener los recordatorios
 def get_recordatorios():
     try:
         conn = get_db_connection()
@@ -519,12 +534,12 @@ def get_recordatorios():
             SELECT p.ID_Prescripcion, p.nombre_medicamento, p.horario_administracion, p.dosis_gr, pa.nombre, pa.apellido
             FROM meditrack.prescripcion p
             JOIN meditrack.pacientes pa ON p.ID_Pacientes = pa.ID_Pacientes
-            WHERE p.horario_administracion BETWEEN %s AND %s
+            WHERE p.horario_administracion >= %s AND p.horario_administracion <= %s
         """
         now = datetime.now()
-        start_time = now - timedelta(minutes=15)  # Recordatorios para los últimos 15 minutos
-        end_time = now + timedelta(minutes=15)  # Recordatorios para los próximos 15 minutos
-        cur.execute(query, (start_time.time(), end_time.time()))
+        start_time = (now - timedelta(minutes=15)).time()  # Recordatorios para los últimos 15 minutos
+        end_time = (now + timedelta(minutes=15)).time()  # Recordatorios para los próximos 15 minutos
+        cur.execute(query, (start_time, end_time))
         result = cur.fetchall()
         cur.close()
         conn.close()
