@@ -4,7 +4,7 @@ from PIL import Image
 from io import BytesIO
 
 # Configuración de la página con favicon
-favicon = "https://github.com/soutovicky/Meditrack2/blob/main/Imagenes/Logo.png?raw=true"
+favicon = "https://github.com/soutovicky/Meditrack2/blob/main/Imagenes/Icon.png?raw=true"
 st.set_page_config(page_title='Meditrack', page_icon=favicon,layout='wide')
 
 # Configuración de la conexión a la base de datos

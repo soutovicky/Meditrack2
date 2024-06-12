@@ -7,7 +7,7 @@ import os
 # 'C:/Users/vicky.DESKTOP-TV6SV47/Downloads/pixelcut-export.png'
 
 # Configuración de la página con favicon
-favicon = "https://github.com/soutovicky/Meditrack2/blob/main/Imagenes/Logo.png?raw=true"
+favicon = "https://github.com/soutovicky/Meditrack2/blob/main/Imagenes/Icon.png?raw=true"
 st.set_page_config(page_title='Meditrack', page_icon=favicon,layout='wide')
 
 
