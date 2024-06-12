@@ -19,13 +19,14 @@ def add_custom_css():
             border-radius: 8px;
             border: 2px solid "#bf8cd4";
             padding: 10px 24px;
-            background-color: "#bf8cd4";
-            color: "#bf8cd4";
+            background-color: #4CAF50;
+            color: white;
             font-size: 16px;
             margin: 10px 0;
         }
         </style>
     """, unsafe_allow_html=True)
+
 
 # Configuración de la conexión a la base de datos
 def get_db_connection():
