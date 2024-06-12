@@ -118,7 +118,7 @@ def show_main_menu():
 def show_forum_news():
     st.subheader("Noticias del Foro")
     forum_news = [
-        {"title": "Inauguración de una nueva área de recreación:", "content": "El geriátrico ha inaugurado una nueva área de recreación para sus residentes. Esta área cuenta con jardines, bancos, juegos de mesa y un espacio para actividades al aire libre, brindando así un entorno agradable y estimulante para el bienestar de los residentes.", "foto": "C:\Users\vicky.DESKTOP-TV6SV47\Documents\GitHub\Meditrack2\Imagenes\arearecreacion.jpeg"},
+        {"title": "Inauguración de una nueva área de recreación:", "content": "El geriátrico ha inaugurado una nueva área de recreación para sus residentes. Esta área cuenta con jardines, bancos, juegos de mesa y un espacio para actividades al aire libre, brindando así un entorno agradable y estimulante para el bienestar de los residentes.", "foto": "https://github.com/soutovicky/Meditrack2/blob/main/Imagenes/arearecreacion.jpeg?raw=true"},
         {"title": "Celebración del Día del Abuelo:", "content": """
 *¡Celebremos juntos el Día del Abuelo en el Geriátrico "Amor y Cuidado"!*
 
@@ -148,8 +148,8 @@ Agradecemos de antemano su participación y les animamos a sumarse a esta celebr
 
 Atentamente,  
 El equipo de "Amor y Cuidado"
-""", "foto": "C:\Users\vicky.DESKTOP-TV6SV47\Documents\GitHub\Meditrack2\Imagenes\Pagina-Dia-de-los-Abuelos.jpg"},
-        {"title": "Charla sobre prevención de caídas:", "content": "El geriátrico ofreció una charla informativa sobre la prevención de caídas en personas mayores. La charla fue dictada por un especialista en geriatría y abordó temas como el fortalecimiento muscular, la importancia de mantener un hogar seguro y consejos para evitar accidentes. Los residentes y sus familias recibieron útiles recomendaciones para promover la seguridad y la autonomía en la vida diaria.", "foto": "C:\Users\vicky.DESKTOP-TV6SV47\Documents\GitHub\Meditrack2\Imagenes\prevencion.png"}
+""", "foto": "https://github.com/soutovicky/Meditrack2/blob/main/Imagenes/Pagina-Dia-de-los-Abuelos.jpg?raw=true"},
+        {"title": "Charla sobre prevención de caídas:", "content": "El geriátrico ofreció una charla informativa sobre la prevención de caídas en personas mayores. La charla fue dictada por un especialista en geriatría y abordó temas como el fortalecimiento muscular, la importancia de mantener un hogar seguro y consejos para evitar accidentes. Los residentes y sus familias recibieron útiles recomendaciones para promover la seguridad y la autonomía en la vida diaria.", "foto": "https://github.com/soutovicky/Meditrack2/blob/main/Imagenes/prevencion.png?raw=true"}
     ]
     for news in forum_news:
         st.write(f"{news['title']}")
