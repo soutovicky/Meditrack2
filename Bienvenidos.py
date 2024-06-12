@@ -12,9 +12,9 @@ def add_custom_css():
         <style>
         .stButton button {
             border-radius: 8px;
-            border: 2px solid #4CAF50;
+            border: 2px solid "#bf8cd4";
             padding: 10px 24px;
-            background-color: #4CAF50;
+            background-color: "#bf8cd4";
             color: "#bf8cd4";
             font-size: 16px;
             margin: 10px 0;
