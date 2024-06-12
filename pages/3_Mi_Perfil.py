@@ -537,7 +537,7 @@ def get_recordatorios():
             JOIN meditrack.pacientes pa ON p.ID_Pacientes = pa.ID_Pacientes
             WHERE p.horario_administracion >= %s AND p.horario_administracion <= %s
         """
-        now = datetime.now()
+        now = current_time_in_argentina
         start_time = (now - timedelta(minutes=15)).time()  # Recordatorios para los últimos 15 minutos
         end_time = (now + timedelta(minutes=15)).time()  # Recordatorios para los próximos 15 minutos
         cur.execute(query, (start_time, end_time))
