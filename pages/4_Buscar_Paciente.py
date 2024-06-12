@@ -50,7 +50,7 @@ def buscar_id_paciente(nombre, apellido):
     
 
 def buscar_id_paciente_page():
-    st.set_page_config(page_title="Buscar ID de Paciente", page_icon="🔍")
+    #st.set_page_config(page_title="Buscar ID de Paciente", page_icon="🔍")
     st.title("Buscar ID de Paciente")
 
     # Agregar una imagen o icono
