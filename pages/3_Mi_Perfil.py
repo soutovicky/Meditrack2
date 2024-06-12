@@ -4,19 +4,9 @@ import random
 import datetime
 from datetime import datetime, timedelta
 from datetime import datetime, timezone
-import pytz
 
-# Obtener la hora actual en UTC
-def get_time_in_timezone(timezone):
-    tz = pytz.timezone(timezone)
-    time_in_tz = datetime.now(tz)
-    return time_in_tz
 
-# Define the Argentina timezone
-argentina_timezone = 'America/Argentina/Buenos_Aires'
-
-# Get the current time in the Argentina timezone
-current_time_in_argentina = get_time_in_timezone(argentina_timezone)
+now = datetime.now(timezone.utc)
 
 st.title("Establezca su Ocupación")
 
