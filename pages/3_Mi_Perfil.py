@@ -487,19 +487,6 @@ def prescripcion_page():
 
 
 #####funciones a probar
-# Función para obtener la conexión a la base de datos
-def get_db_connection():
-    try:
-        conn = psycopg2.connect(
-            host="your_host",
-            database="your_database",
-            user="your_user",
-            password="your_password"
-        )
-        return conn
-    except Exception as e:
-        st.error(f"Error al conectar con la base de datos: {e}")
-        return None
 
 # Función para obtener los medicamentos y horarios de administración
 def get_medicamentos_horarios():
