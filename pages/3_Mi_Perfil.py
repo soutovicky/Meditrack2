@@ -6,7 +6,7 @@ from datetime import datetime, timedelta
 from datetime import datetime, timezone
 
 # Obtener la hora actual en UTC
-now = datetime.now(timezone(timedelta(hours=-3)))
+now = datetime.now(timezone(timedelta(hours=3)))
 
 st.title("Establezca su Ocupación")
 
