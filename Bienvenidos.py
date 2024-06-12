@@ -15,7 +15,7 @@ def add_custom_css():
             border: 2px solid #4CAF50;
             padding: 10px 24px;
             background-color: #4CAF50;
-            color: white;
+            color: "#bf8cd4";
             font-size: 16px;
             margin: 10px 0;
         }
