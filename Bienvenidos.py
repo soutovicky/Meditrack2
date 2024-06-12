@@ -6,6 +6,22 @@ import os
 
 # 'C:/Users/vicky.DESKTOP-TV6SV47/Downloads/pixelcut-export.png'
 
+# CSS personalizado para los botones
+def add_custom_css():
+    st.markdown("""
+        <style>
+        .stButton button {
+            border-radius: 8px;
+            border: 2px solid #4CAF50;
+            padding: 10px 24px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            margin: 10px 0;
+        }
+        </style>
+    """, unsafe_allow_html=True)
+
 # Configuración de la conexión a la base de datos
 def get_db_connection():
     try:
