@@ -3,6 +3,10 @@ import psycopg2
 import random
 import datetime
 from datetime import datetime, timedelta
+from datetime import datetime, timezone
+
+# Obtener la hora actual en UTC
+now = datetime.now(timezone.utc)
 
 st.title("Establezca su Ocupación")
 
