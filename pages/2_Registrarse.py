@@ -1,6 +1,7 @@
 import streamlit as st
 import psycopg2
 import random
+import time
 
 # Configuración de la conexión a la base de datos
 def get_db_connection():
@@ -21,6 +22,16 @@ def get_db_connection():
     except Exception as e:
         st.error(f"Error al conectar a la base de datos: {e}")
         return None
+
+
+# Función para mostrar la barra de carga
+def show_loading_bar():
+    with st.spinner('Tus datos se están registrando...'):
+        progress_bar = st.progress(0)
+        for percent_complete in range(100):
+            time.sleep(0.05)
+            progress_bar.progress(percent_complete + 1)
+        st.success('¡Carga completa! Ya casi estamos listos.')
 
 # Función para registrar un nuevo empleado
 def registrar_empleado(id_empleado, nombre, apellido, sector_geriatrico, horario_entrada, horario_salida):
@@ -81,6 +92,7 @@ def main():
         horario_salida_input = st.time_input("Horario de Salida:")
 
         if st.button("Registrarse como Empleado"):
+            show_loading_bar()
             if registrar_empleado(id_empleado_input, nombre_input, apellido_input, sector_geriatrico_input, horario_entrada_input, horario_salida_input):
                 st.success("Empleado registrado exitosamente. Ahora puede iniciar sesión")
                 st.page_link("pages/1_Iniciar_Sesión.py", label="Inicio", icon="➡️", help=None, disabled=False, use_container_width=None)
@@ -93,6 +105,7 @@ def main():
         hospital_input = st.text_input("Hospital:")
 
         if st.button("Registrarse como Doctor"):
+            show_loading_bar()
             if registrar_doctor(id_doctor_input, nombre_input, apellido_input, hospital_input):
                 st.success("Doctor registrado exitosamente. Ahora puede iniciar sesión")
                 st.page_link("pages/1_Iniciar_Sesión.py", label="Inicio", icon="➡️", help=None, disabled=False, use_container_width=None)

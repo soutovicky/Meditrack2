@@ -6,6 +6,11 @@ import os
 
 # 'C:/Users/vicky.DESKTOP-TV6SV47/Downloads/pixelcut-export.png'
 
+# Configuración de la página con favicon
+def set_page_config():
+    favicon = "https://github.com/soutovicky/Meditrack2/blob/main/Imagenes/Logo.png?raw=true"
+    st.set_page_config(page_title="MediTrack", page_icon=favicon)
+
 # CSS personalizado para los botones
 def add_custom_css():
     st.markdown("""
@@ -45,6 +50,7 @@ def get_db_connection():
 col1, col2 = st.columns(2, gap="large")
 
 def main():
+    add_custom_css()
     st.title("¡Bienvenido a MediTrack!")
 
     # Dividir la pantalla en tres columnas
