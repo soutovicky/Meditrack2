@@ -2,11 +2,7 @@ import streamlit as st
 from PIL import Image
 import pandas as pd
 import psycopg2
-
-import streamlit as st
-from PIL import Image
-import pandas as pd
-import psycopg2
+import os
 
 # 'C:/Users/vicky.DESKTOP-TV6SV47/Downloads/pixelcut-export.png'
 
@@ -74,7 +70,9 @@ def get_empleados_por_sector():
 # Función para mostrar el logo de la página
 
 def show_logo():
-    logo = Image.open('C:/Users/vicky.DESKTOP-TV6SV47/Documents/GitHub/Meditrack2/Imagenes/Logo.png')  # Reemplaza con la ruta a tu imagen de logo
+    logo_path = os.path.join(os.path.dirname('C:/Users/vicky.DESKTOP-TV6SV47/Documents/GitHub/Meditrack2/Imagenes/Logo.png'), 'Imagenes', 'Logo.png')
+    #logo = Image.open('C:/Users/vicky.DESKTOP-TV6SV47/Documents/GitHub/Meditrack2/Imagenes/Logo.png')  # Reemplaza con la ruta a tu imagen de logo
+    logo = Image.open(logo_path)
     st.image(logo, width=500)
 
 # Función para mostrar el menú principal
