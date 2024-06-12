@@ -74,7 +74,7 @@ def show_logo():
     #logo = Image.open(logo_path)
     #st.image(logo, width=500)
     logo_url = "https://github.com/soutovicky/Meditrack2/blob/main/Imagenes/Logo.png"
-    st.image(logo_url, caption="Logo de Meditrack", use_column_width=True)
+    st.image(logo_url, use_column_width=True, width=500)
 
 # Función para mostrar el menú principal
 def show_main_menu():
