@@ -5,6 +5,9 @@ import datetime
 from datetime import datetime, timedelta
 from datetime import datetime, timezone
 
+# Configuración de la página con favicon
+favicon = "https://github.com/soutovicky/Meditrack2/blob/main/Imagenes/Logo.png?raw=true"
+st.set_page_config(page_title='Meditrack', page_icon=favicon,layout='wide')
 
 now = datetime.now(timezone.utc)
 
@@ -38,6 +41,7 @@ def get_db_connection():
     except Exception as e:
         st.error(f"Error al conectar a la base de datos: {e}")
         return None
+
 
 # Función para verificar si el ID existe en la tabla 'empleado'
 def check_id_in_empleado(id_to_check):

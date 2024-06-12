@@ -7,9 +7,9 @@ import os
 # 'C:/Users/vicky.DESKTOP-TV6SV47/Downloads/pixelcut-export.png'
 
 # Configuración de la página con favicon
-def set_page_config():
-    favicon = "https://github.com/soutovicky/Meditrack2/blob/main/Imagenes/Logo.png?raw=true"
-    st.set_page_config(page_title="MediTrack", page_icon=favicon)
+favicon = "https://github.com/soutovicky/Meditrack2/blob/main/Imagenes/Logo.png?raw=true"
+st.set_page_config(page_title='Meditrack', page_icon=favicon,layout='wide')
+
 
 # CSS personalizado para los botones
 def add_custom_css():
