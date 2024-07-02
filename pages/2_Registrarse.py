@@ -77,9 +77,7 @@ def registrar_doctor(id_doctor, nombre, apellido, hospital):
         st.error(f"Error al registrar doctor: {e}")
         return False
 
-# Función para generar un ID aleatorio de 9 dígitos
-def generar_id_aleatorio():
-    return random.randint(100000000, 999999999)
+
 
 # Función principal para la página de registro de usuarios
 def main():
@@ -90,7 +88,7 @@ def main():
     ocupacion_input = st.selectbox("Seleccione su Ocupación:", ["Empleado", "Doctor"])
 
     if ocupacion_input == "Empleado":
-        id_empleado_input = st.text_input("ID del Empleado:", placeholder="Código de 9 números")
+        id_empleado_input = st.text_input("ID del Empleado:", placeholder= "Ej: 45072248")
         sector_geriatrico_input = st.text_input("Sector Geriátrico:")
         horario_entrada_input = st.time_input("Horario de Entrada:")
         horario_salida_input = st.time_input("Horario de Salida:")
@@ -105,7 +103,7 @@ def main():
                 st.error("Error al registrar empleado")
 
     elif ocupacion_input == "Doctor":
-        id_doctor_input = st.text_input("ID del Doctor:", value=str(generar_id_aleatorio()))
+        id_doctor_input = st.text_input("ID del Doctor:", placeholder= "Ej: 45072248")
         hospital_input = st.text_input("Hospital:")
 
         if st.button("Registrarse como Doctor"):

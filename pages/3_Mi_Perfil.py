@@ -476,12 +476,15 @@ def get_horario_area(id_empleado):
         st.error(f"Error al obtener el horario y área del empleado: {e}")
         return None
 
+# Función para generar un ID aleatorio de 9 dígitos
+def generar_id_aleatorio():
+    return random.randint(100000000, 999999999)
 
 #Funcion para pagina de prescripciones en doctores
 def prescripcion_page():
     st.header("Prescripción")
     
-    id_prescripcion = st.text_input("ID de la Prescripción:", key="add_prescripcion_id")
+    id_prescripcion = st.text_input("ID de la Prescripción:",value=str(generar_id_aleatorio()),  key="add_prescripcion_id")
     nombre_medicamento = st.text_input("Nombre del Medicamento:", key="add_prescripcion_nombre_medicamento")
     horario_administracion = st.time_input("Horario de Administración:", key="add_prescripcion_horario")
     dosis_gr = st.number_input("Dosis (gramos):", min_value=0.0, step=0.1, key="add_prescripcion_dosis")
