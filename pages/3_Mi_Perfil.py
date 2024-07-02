@@ -294,7 +294,7 @@ def admin_medicamentos_page():
     # Botón para guardar los cambios
     if st.button("Guardar Cambios", key="btn_guardar_cambios"):
         if update_administracion(st.session_state['user_id'], st.session_state['selected_prescripciones']):
-            st.success("Cambios guardados correctamente.")
+            st.success("Prescripción administrada correctamente")
         else:
             st.error("Error al guardar los cambios.")
         st.session_state['paciente_encontrado'] = False
