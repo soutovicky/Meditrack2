@@ -90,7 +90,7 @@ def main():
     ocupacion_input = st.selectbox("Seleccione su Ocupación:", ["Empleado", "Doctor"])
 
     if ocupacion_input == "Empleado":
-        id_empleado_input = st.text_input("ID del Empleado:", value=str(generar_id_aleatorio()))
+        id_empleado_input = st.text_input("ID del Empleado:", placeholder="Código de 9 números")
         sector_geriatrico_input = st.text_input("Sector Geriátrico:")
         horario_entrada_input = st.time_input("Horario de Entrada:")
         horario_salida_input = st.time_input("Horario de Salida:")
