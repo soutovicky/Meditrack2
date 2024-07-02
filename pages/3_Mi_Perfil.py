@@ -295,7 +295,6 @@ def admin_medicamentos_page():
     if st.button("Guardar Cambios", key="btn_guardar_cambios"):
         if update_administracion(st.session_state['user_id'], st.session_state['selected_prescripciones']):
             st.success("Prescripción administrada correctamente")
-            st.experimental_set_query_params()
         else:
             st.error("Error al guardar los cambios.")
         st.session_state['paciente_encontrado'] = False
@@ -486,7 +485,40 @@ def prescripcion_page():
     st.header("Prescripción")
     
     id_prescripcion = st.text_input("ID de la Prescripción:",value=str(generar_id_aleatorio()),  key="add_prescripcion_id")
-    nombre_medicamento = st.text_input("Nombre del Medicamento:", key="add_prescripcion_nombre_medicamento")
+    nombre_medicamento = st.selectbox(
+    "Nombre del Medicamento",
+    (
+        "Paracetamol",
+        "Ibuprofeno",
+        "Amoxicilina",
+        "Omeprazol",
+        "Loratadina",
+        "Diazepam",
+        "Cetirizina",
+        "Atorvastatina",
+        "Metformina",
+        "Simvastatina",
+        "Ramipril",
+        "Losartan",
+        "Insulina",
+        "Warfarina",
+        "Levotiroxina",
+        "Aspirina",
+        "Enalapril",
+        "Metoprolol",
+        "Lisinopril",
+        "Digoxina",
+        "Amlodipino",
+        "Pantoprazol",
+        "Prednisona",
+        "Metronidazol",
+        "Macril",
+        "Penicilina",
+        "Betametasona",
+        "Bactrim"
+    ),
+        index=None,
+        placeholder="Seleccione una opción...")
     horario_administracion = st.time_input("Horario de Administración:", key="add_prescripcion_horario")
     dosis_gr = st.number_input("Dosis (gramos):", min_value=0.0, step=0.1, key="add_prescripcion_dosis")
     id_paciente = st.text_input("ID del Paciente:", key="add_prescripcion_paciente_id")
