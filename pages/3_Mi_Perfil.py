@@ -555,7 +555,7 @@ def recordatorios_medicamentos_page():
     if recordatorios:
         for rec in recordatorios:
             id_prescripcion, nombre_medicamento, horario_administracion, dosis_gr, ID_Pacientes, nombre_paciente, apellido_paciente = rec
-            st.warning(f"¡Recordatorio! Administrar {nombre_medicamento} ({dosis_gr}g) a {ID_Pacientes}: {nombre_paciente} {apellido_paciente} a las {horario_administracion}.")
+            st.warning(f"¡Recordatorio! Administrar {nombre_medicamento} ({dosis_gr}g) a {nombre_paciente} {apellido_paciente} ({ID_Pacientes}) a las {horario_administracion}.")
     else:
         st.info("No hay recordatorios en este momento.")
 
