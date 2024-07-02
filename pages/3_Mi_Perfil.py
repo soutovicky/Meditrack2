@@ -530,7 +530,7 @@ def get_recordatorios():
             return None
         cur = conn.cursor()
         query = """
-            SELECT p.ID_Prescripcion, p.nombre_medicamento, p.horario_administracion, p.dosis_gr, pa.nombre, pa.apellido, pa.ID_Pacientes
+            SELECT p.ID_Prescripcion, p.nombre_medicamento, p.horario_administracion, p.dosis_gr, pa.ID_Pacientes, pa.nombre, pa.apellido
             FROM meditrack.prescripcion p
             JOIN meditrack.pacientes pa ON p.ID_Pacientes = pa.ID_Pacientes
             WHERE p.horario_administracion >= %s AND p.horario_administracion <= %s
@@ -555,7 +555,7 @@ def recordatorios_medicamentos_page():
     if recordatorios:
         for rec in recordatorios:
             id_prescripcion, nombre_medicamento, horario_administracion, dosis_gr, ID_Pacientes, nombre_paciente, apellido_paciente = rec
-            st.warning(f"¡Recordatorio! Administrar {nombre_medicamento} ({dosis_gr}g) a {nombre_paciente} {apellido_paciente} ({ID_Pacientes}) a las {horario_administracion}.")
+            st.warning(f"¡Recordatorio! Administrar {nombre_medicamento} ({dosis_gr}g) a {ID_Pacientes}: {nombre_paciente} {apellido_paciente} a las {horario_administracion}.")
     else:
         st.info("No hay recordatorios en este momento.")
 
